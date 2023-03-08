@@ -1,0 +1,27 @@
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Life+Savers:wght@700&family=Mynerve&display=swap');
+
+/* STYLES */
+.CardDiv {
+    background: linear-gradient(to top left, #ffffff53, #ffffff);
+    padding: 1rem;
+    border-radius: 40px;
+    font-family: 'Mynerve', cursive;
+    box-shadow: 0 0 15px #000000, 0 0 30px #d938388d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid black;
+    align-items: center;
+}
+
+.CardDiv img {
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px #da7e7e, 0 0 30px #ff9595;
+    border: 2px solid black;
+}
+
+.temp {
+    text-shadow: 0 0 10px rgb(255, 0, 0);
+}

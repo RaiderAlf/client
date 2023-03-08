@@ -4,10 +4,9 @@ const initialState = {
     allDogs: [], //declaro un estado q siempre va a tener todos los perros
     temperament : [],
     detail: []
-
 };
 
-function rootReducer(state= initialState, action){
+function rootReducer(state = initialState, action){
     switch(action.type) {
 
         case 'GET_DOGS':

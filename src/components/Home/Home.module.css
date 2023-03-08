@@ -1,0 +1,10 @@
+.HomeDiv {
+    display: grid;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPjUpb_8Gs1UEi6QyYgRFzFp3sWRmTazMR1g&usqp=CAU");
+    background-attachment: fixed;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    padding: 2rem;
+    justify-content: space-around;
+    align-items: center;
+}
