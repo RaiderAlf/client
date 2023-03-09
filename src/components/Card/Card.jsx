@@ -8,11 +8,10 @@ const Card = (props) => {
 
     return(
         <div className={Styles.CardDiv} >
-            <Link to={`/dogs/${props.id}`}>
+            <Link to={`/detail/${props.id}`}>
                 <img src={props.image} alt="Dog Pic" />
             </Link>
             <h2>{props.name}</h2>
-            <strong className={Styles.temp} >{props.temperament}</strong>
         </div>
     )
 }

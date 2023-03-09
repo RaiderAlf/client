@@ -1,10 +1,57 @@
+.Home {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPjUpb_8Gs1UEi6QyYgRFzFp3sWRmTazMR1g&usqp=CAU");
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.divSearch {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.InputSearch {
+    padding: .5rem;
+    border: none;
+    border-radius: 15px;
+    background-color: #fdcccc;
+    box-shadow: 0 0 10px #000000,inset 0 0 5px #d938388d;
+}
+
+.BtnHome {
+    padding: .5rem;
+    background-color: #f8e5e5;
+    box-shadow: 0 0 10px #000000,inset 0 0 5px #d938388d;
+    border: none;
+    border-radius: 15px;
+    transition: box-shadow .2s linear
+}
+
+.BtnHome:hover {
+    box-shadow: 0 0 15px #000000, 0 0 2px #d938388d;
+}
+
+.BtnHome:active {
+    box-shadow: inset 0 0 5px #000000, 0 0 2px #d938388d;
+}
+
+.NavBar {
+    padding: 1rem;
+    background: linear-gradient(to bottom, #ffffff, #ffffff00 );
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .HomeDiv {
     display: grid;
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPjUpb_8Gs1UEi6QyYgRFzFp3sWRmTazMR1g&usqp=CAU");
     background-attachment: fixed;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    padding: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: .5rem 2rem;
     justify-content: space-around;
     align-items: center;
 }

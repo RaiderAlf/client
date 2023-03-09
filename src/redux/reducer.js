@@ -3,7 +3,7 @@ const initialState = {
     dogs : [],
     allDogs: [], //declaro un estado q siempre va a tener todos los perros
     temperament : [],
-    detail: []
+    detail: {}
 };
 
 function rootReducer(state = initialState, action){
@@ -61,7 +61,7 @@ function rootReducer(state = initialState, action){
 
         case 'ORDER_BY_NAME': //'Asc. Desc'
             let sortName = action.payload ==='Asc'?
-            state.allDogs.sort(function(a, b) {
+            state.allDogs.results.sort(function(a, b) {
                 if (a.name.toLowerCase() > b.name.toLowerCase()) {
                     return 1;
                 }
@@ -70,7 +70,7 @@ function rootReducer(state = initialState, action){
                 }
                 return 0; // si son iguales lo deja como están quiere decir
             }) 
-            :state.allDogs.sort(function(a, b) { // si no, ordenalo 'Desc'
+            :state.allDogs.results.sort(function(a, b) { // si no, ordenalo 'Desc'
                 if (a.name.toLowerCase() > b.name.toLowerCase()) {
                     return -1;
                 }

@@ -1,0 +1,47 @@
+.DetailDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPjUpb_8Gs1UEi6QyYgRFzFp3sWRmTazMR1g&usqp=CAU");
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.BreedName {
+    text-align: center;
+}
+
+.btnBack {
+    box-shadow: 0 0 20px #000000, inset 0 0 10px #d938388d;
+    padding: .5rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 20px;
+    background-color: #0000002d;
+    transition: all 5s linear;
+}
+
+.btnBack:hover {
+    box-shadow: inset 0 0 10px #000000, 0 0 10px #d938388d;
+}
+
+.CardDiv {
+    backdrop-filter: blur(3px);
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #000000, inset 0 0 30px #d938388d;
+    font-family: 'Mynerve', cursive;
+    padding: 2rem;
+}
+
+.CardDiv img {
+    box-shadow: 0 0 15px #000000, inset 0 0 30px #d938388d;
+    border-radius: 40px;
+    margin-bottom: 1rem;
+    width: 400px;
+    max-height: 500px;
+}
