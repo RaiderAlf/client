@@ -5,7 +5,8 @@ import {Routes, Route} from 'react-router-dom'
 import Landing from './components/Landing/Landing';
 import Home from './components/Home/Home';
 import DetailsCard from './components/DetailsCard/DetailsCard';
-// import Loader from './components/Loader/Loader';
+import CreateDogs from './components/CreateDog/CreateDog';
+
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<Landing/>} />
         <Route path='/home' element={<Home />} />
         <Route path='/detail/:id' element={<DetailsCard />} />
+        <Route path='/create' element={<CreateDogs/>} />
       </Routes>
 
     </div>

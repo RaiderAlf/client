@@ -8,10 +8,10 @@ const Card = (props) => {
 
     return(
         <div className={Styles.CardDiv} >
-            <Link to={`/detail/${props.id}`}>
+            <Link className={Styles.Link} to={`/detail/${props.id}`}>
                 <img src={props.image} alt="Dog Pic" />
+                <h2>{props.name}</h2>
             </Link>
-            <h2>{props.name}</h2>
         </div>
     )
 }

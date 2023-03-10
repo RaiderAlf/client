@@ -1,7 +1,7 @@
 
 const initialState = { 
     dogs : [],
-    allDogs: [], //declaro un estado q siempre va a tener todos los perros
+    allDogs: [],
     temperament : [],
     detail: {}
 };
@@ -11,15 +11,15 @@ function rootReducer(state = initialState, action){
 
         case 'GET_DOGS':
         return {
-            ...state, //guardo el estado
-            dogs: action.payload, //en mi estado dogs, q en un ppio es un estado vacío, mandà todo lo q te mande la acción de dogs
-            allDogs: action.payload //acá tb me guarda todos los perros para q pueda usarlo cdo filtro y q me los cargue a todos de nuevo, y no sobre el filtro del filtro
+            ...state,
+            dogs: action.payload,
+            allDogs: action.payload 
         }
 
         case 'GET_DOG_NAME':
             return {
                 ...state,
-                dogs: action.payload //es el arreglo q estoy renderizando
+                dogs: action.payload
             }
 
         case 'GET_TEMPERAMENT':
@@ -27,11 +27,6 @@ function rootReducer(state = initialState, action){
             ...state,
             temperament: action.payload
         }
-
-        case 'POST_DOG':
-            return {
-                ...state,
-            }
 
 
         case 'FILTER_BY_TEMPERAMENT':
@@ -60,21 +55,22 @@ function rootReducer(state = initialState, action){
         }
 
         case 'ORDER_BY_NAME': //'Asc. Desc'
-            let sortName = action.payload ==='Asc'?
-            state.allDogs.results.sort(function(a, b) {
-                if (a.name.toLowerCase() > b.name.toLowerCase()) {
+            let sortName = action.payload ==='Desc'?
+            state.allDogs.sort(
+                function(a, b) {
+                if (a.name.toLowerCase() - b.name.toLowerCase()) {
                     return 1;
                 }
-                if (b.name.toLowerCase() > a.name.toLowerCase()) {
+                if (b.name.toLowerCase() - a.name.toLowerCase()) {
                     return -1;
                 }
-                return 0; // si son iguales lo deja como están quiere decir
+                return 0; 
             }) 
-            :state.allDogs.results.sort(function(a, b) { // si no, ordenalo 'Desc'
-                if (a.name.toLowerCase() > b.name.toLowerCase()) {
+            : state.allDogs.sort(function(a, b) { 
+                if (a.name.toLowerCase() - b.name.toLowerCase()) {
                     return -1;
                 }
-                if (b.name.toLowerCase() > a.name.toLowerCase()) {
+                if (b.name.toLowerCase() - a.name.toLowerCase()) {
                     return 1;
                 }
                 return 0;

@@ -5,7 +5,7 @@ export const getDogs = () => (dispatch) => {
     .then(response => {
         dispatch({
             type: 'GET_DOGS', 
-            payload: response.data
+            payload: response.data.results
         })
     })
 }
@@ -26,7 +26,7 @@ export const getDogName = (name) => (dispatch) => {
             .then(response => 
                 dispatch({
                     type: 'GET_DOG_NAME',
-                    payload: response.data
+                    payload: response.data.results
                 }))
             
 }
@@ -37,14 +37,8 @@ export const getTemperament = () => (dispatch) => {
             dispatch({
             type: 'GET_TEMPERAMENT',
             payload: response.data.results
-        }) )
+        }))
         
-}
-
-export const postDog = (payload) => async (dispatch) => {
-        const data = await axios.post('http://localhost:3001/dogs', payload);
-        console.log(data)
-        return data;
 }
 
 export function filterDogsByTemperament(payload){ 
