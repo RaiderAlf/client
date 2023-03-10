@@ -1,7 +1,7 @@
 //STYLES
 import Styles from './Pagination.module.css';
 
-const Pagination = ({ currentPage, elementsPerPage, totalElements, onPageChange }) => {
+const Pagination = ({ elementsPerPage, totalElements, onPageChange }) => {
     const totalPages = Math.ceil(totalElements / elementsPerPage)
     const pages = [...Array(totalPages).keys()].map(page => page + 1)  
     return (

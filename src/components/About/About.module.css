@@ -1,0 +1,43 @@
+.AboutDiv {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPjUpb_8Gs1UEi6QyYgRFzFp3sWRmTazMR1g&usqp=CAU");
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Mynerve', cursive;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.AboutDiv h1, .AboutDiv h2, .AboutDiv h3 {
+    font-weight: 800;
+}
+
+.LogoImg {
+    filter: drop-shadow(  15px -5px 8px #000000d0);
+    transition: all .2s linear;
+}
+
+.LogoImg:hover {
+    filter: drop-shadow(  15px -5px 20px #00000085);
+}
+
+.DivInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #ffffffd8;
+    box-shadow: 0 0 10px #000000, inset 0 0 30px #d938388d;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 80%;
+}
+
+.LinksDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}

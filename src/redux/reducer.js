@@ -10,11 +10,11 @@ function rootReducer(state = initialState, action){
     switch(action.type) {
 
         case 'GET_DOGS':
-        return {
-            ...state,
-            dogs: action.payload,
-            allDogs: action.payload 
-        }
+            return {
+                ...state,
+                dogs: action.payload,
+                allDogs: action.payload 
+            }
 
         case 'GET_DOG_NAME':
             return {
@@ -23,10 +23,10 @@ function rootReducer(state = initialState, action){
             }
 
         case 'GET_TEMPERAMENT':
-        return {
-            ...state,
-            temperament: action.payload
-        }
+            return {
+                ...state,
+                allDogs : action.payload
+            }
 
 
         case 'FILTER_BY_TEMPERAMENT':
@@ -58,19 +58,19 @@ function rootReducer(state = initialState, action){
             let sortName = action.payload ==='Desc'?
             state.allDogs.sort(
                 function(a, b) {
-                if (a.name.toLowerCase() - b.name.toLowerCase()) {
+                if (a.name.toLowerCase() < b.name.toLowerCase()) {
                     return 1;
                 }
-                if (b.name.toLowerCase() - a.name.toLowerCase()) {
+                if (b.name.toLowerCase() < a.name.toLowerCase()) {
                     return -1;
                 }
                 return 0; 
             }) 
             : state.allDogs.sort(function(a, b) { 
-                if (a.name.toLowerCase() - b.name.toLowerCase()) {
+                if (a.name.toLowerCase() < b.name.toLowerCase()) {
                     return -1;
                 }
-                if (b.name.toLowerCase() - a.name.toLowerCase()) {
+                if (b.name.toLowerCase() < a.name.toLowerCase()) {
                     return 1;
                 }
                 return 0;

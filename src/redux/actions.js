@@ -10,6 +10,28 @@ export const getDogs = () => (dispatch) => {
     })
 }
 
+// export const getTemperament = () => async (dispatch) => {
+//     await axios.get('http://localhost:3001/temperaments/')
+//     .then(response => 
+//         dispatch({
+//         type: 'GET_TEMPERAMENT',
+//         payload: response.data.result
+//     }))
+    
+// }
+
+export const getTemperament = () =>  (dispatch) => {
+    try {
+      const response = axios.get('http://localhost:3001/temperaments/');
+      dispatch({ 
+        type: 'GET_TEMPERAMENT', 
+        payload: response.data.results
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
 export const getDetail = (id) => (dispatch) => {
 
         axios.get(`http://localhost:3001/dogs/${id}`)
@@ -29,16 +51,6 @@ export const getDogName = (name) => (dispatch) => {
                     payload: response.data.results
                 }))
             
-}
-
-export const getTemperament = () => (dispatch) => {
-        axios.get('http://localhost:3001/temperaments/')
-        .then(response => 
-            dispatch({
-            type: 'GET_TEMPERAMENT',
-            payload: response.data.results
-        }))
-        
 }
 
 export function filterDogsByTemperament(payload){ 

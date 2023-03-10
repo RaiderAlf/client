@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from "react";
 //ACTIONS
-import { getDogName, getDogs, getTemperament, orderByName, filterDogsByTemperament } from '../../redux/actions';
+import { getDogName, getDogs, getTemperament, filterDogsByTemperament } from '../../redux/actions';
 //COMPONENTS
 import Loader from '../Loader/Loader';
 import Card from '../Card/Card';
@@ -18,6 +18,18 @@ const Home = () => {
 
     //REDUCER
     const dispatch = useDispatch();
+
+    //ALL DOGS
+    useEffect(() => {
+        dispatch(getDogs());
+    },[dispatch]);
+
+    //DOGS Temperament
+    useEffect(() => {
+        dispatch(getTemperament)
+    },[dispatch])
+
+    //STATES
     const allDogs = useSelector(state => state.dogs);
     const allTemperament = useSelector(state => state.temperament);
 
@@ -40,38 +52,29 @@ const Home = () => {
         setCurrentPage(pageNumber);
     };
 
-    //ALL DOGS
-    useEffect(() => {
-        dispatch(getDogs());
-    },[dispatch]);
-
-    //DOGS Temperament
-    useEffect(() => {
-        dispatch(getTemperament)
-    },[dispatch])
-    
     //RESET HANDLER
     const handlerReset = (e) => {
+        console.log(currentElements)
         e.preventDefault();
         dispatch(getDogs());
     };
 
     //FILTER BY TEMPERAMENT
-    const handleFilterTemperament = (e) => {
-        e.preventDefault();
-        dispatch(filterDogsByTemperament(e.target.value));
-   };
+//     const handleFilterTemperament = (e) => {
+//         e.preventDefault();
+//         dispatch(filterDogsByTemperament(e.target.value));
+//    };
 
     //SORT BY NAME
     const handleSort = (e) => {
         e.preventDefault();
-        dispatch(orderByName(e.target.value));
-    }
+        allDogs.reverse()
+    };
+
 
     //INPUT HANDLER
     const handlerOnSearch = (e) => {
         console.log(allDogs, allTemperament)
-        e.preventDefault();
         setInput({
             value : e.target.value
         });
@@ -108,7 +111,7 @@ const Home = () => {
 
                 </div>
 
-                <select onChange={(e) => handleFilterTemperament(e)}>
+                {/* <select onChange={(e) => handleFilterTemperament(e)}>
                     <option>Temperaments</option>
                     <option value='All'>All</option>
 
@@ -117,27 +120,38 @@ const Home = () => {
                         {temperament.name}
                     </option>
                     ))}
-             </select>
+             </select> */}
 
-                <select onClick={ e => {handleSort(e)}}  >
+                <select onChange={ e => {handleSort(e)}}  >
                     <option value='Asc'>A-Z</option>
                     <option value='Desc'>Z-A</option>
                 </select>
 
-                <button className={Styles.BtnHome} onClick={e => handleSort(e)} > Sort </button>
                 <button className={Styles.BtnHome} onClick={(e) => handlerReset(e)} >Todos los perros</button>
 
                 <Link className={Styles.BtnHome} to={'/create'}>
                     Create a Dog
                 </Link>
 
+                <Link className={Styles.BtnHome} to='/about'>
+                    About
+                </Link>
+
             </div>
+            <hr/>
             <div className={Styles.contentDiv}>
                 <div className={Styles.HomeDiv} >
                         {
                             currentElements?.length ? (
 
-                                currentElements?.map(dog => ( <Card key={dog.id} name={dog.name} image={dog.image} id={dog.id} />))
+                                currentElements?.map(dog => ( <Card 
+                                    key={dog.id} 
+                                    name={dog.name}
+                                    weight={dog.weight} 
+                                    image={dog.image} 
+                                    id={dog.id} 
+                                    temperament={dog.temperament}
+                                    />))
                             ) : (
                                 <Loader />
                             )
@@ -146,7 +160,6 @@ const Home = () => {
                     
                     <div className={Styles.Pagination} >
                         <Pagination 
-                            currentPage={currentPage}
                             elementsPerPage={elementsPerPage}
                             totalElements={allDogs.length}
                             onPageChange={handlePageChange}

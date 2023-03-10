@@ -7,8 +7,9 @@
 }
 
 .contentDiv {
-    padding: 3rem 0 ;
+    padding: .5rem 0 ;
     display: flex;
+    gap: 1rem 0;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -17,7 +18,12 @@
 
 .LogoImg {
     transform: rotateY(180deg);
-    filter: drop-shadow( 0 10px 5px rgba(0, 0, 0, 0.445));
+    filter: drop-shadow( 15px -5px 8px #00000085);
+    transition: all .2s linear;
+}
+
+.LogoImg:hover {
+    filter: drop-shadow( 15px -5px 50px #00000085);
 }
 
 .divSearch {
@@ -25,10 +31,6 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-
-.Pagination {
-    margin-top: 3rem;
 }
 
 .InputSearch {
@@ -63,6 +65,7 @@
     text-decoration: none;
     font-family: 'Mynerve', cursive;
     font-weight: 600;
+    color: #000000;
 }
 
 .BtnHome:hover {
@@ -74,8 +77,8 @@
 }
 
 .NavBar {
-    padding: 1rem;
-    background: linear-gradient(to bottom, #ffffff, #ffffff00 );
+    padding: .1rem;
+    background: linear-gradient(to bottom, #ffffffd8 60%, #ffffff00 );
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -86,8 +89,8 @@
     display: grid;
     background-attachment: fixed;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem 1.5rem;
-    padding: .5rem 2rem;
+    gap: 1rem 1.5rem;
+    padding: 0 2rem;
     justify-content: space-around;
     align-items: center;
 }

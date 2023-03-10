@@ -8,25 +8,36 @@
     padding: 1rem;
     border-radius: 40px;
     font-family: 'Mynerve', cursive;
+    gap: .5rem;
     box-shadow: 0 0 10px #000000, 0 0 30px #d938388d;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: all .5s linear;
+    text-align: center;
+}
+
+.CardDiv p {
+    font-weight: 600;
 }
 
 .CardDiv:hover {
     box-shadow: 0 0 20px #000000, inset 0 0 30px #d938388d;
     backdrop-filter: blur(5px);
+    animation: shake 1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.CardDiv:hover img {
+    transform: scale(1.05);
+    animation: shake .5s infinite;
 }
 
 .CardDiv img {
     width: 250px;
     height: 200px;
     border-radius: 20px;
-    box-shadow: 0 0 25px #da7e7e, 0 0 30px #ff9595;
-    border: 2px solid black;
+    box-shadow: 0 0 25px #fc3e3e, inset 0 0 30px #ff2626;
 }
 
 .temp {
@@ -37,3 +48,9 @@
     text-decoration: none;
     color: black;
 }
+
+@keyframes shake {
+    0% { transform: translate(2px, 0); }
+    20% { transform: translate(-2px, 0); }
+    100% { transform: translate(2px, 0); }
+  }
