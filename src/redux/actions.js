@@ -20,9 +20,9 @@ export const getDogs = () => (dispatch) => {
     
 // }
 
-export const getTemperament = () =>  (dispatch) => {
+export const getTemperament = () => async (dispatch) => {
     try {
-      const response = axios.get('http://localhost:3001/temperaments/');
+      const response = await axios.get('http://localhost:3001/temperament/');
       dispatch({ 
         type: 'GET_TEMPERAMENT', 
         payload: response.data.results
@@ -30,6 +30,13 @@ export const getTemperament = () =>  (dispatch) => {
     } catch (error) {
       console.log(error);
     }
+
+    // fetch('http://localhost:3001/temperament')
+    // .then(res => res.json())
+    // .then(response => dispatch({
+    //     type: 'GET_TEMPERAMENT',
+    //     payload: response.data
+    // }))
   };
 
 export const getDetail = (id) => (dispatch) => {

@@ -25,12 +25,12 @@ function rootReducer(state = initialState, action){
         case 'GET_TEMPERAMENT':
             return {
                 ...state,
-                allDogs : action.payload
+                temperament : action.payload
             }
 
 
         case 'FILTER_BY_TEMPERAMENT':
-            const allBreeds = state.dogs //aca tb para el filtro desde todos
+            const allBreeds = state.dogs
             const temperamentFiltered = action.payload === 'All'? 
             state.allDogs : allBreeds.filter(el => {
                return el.temperament? el.temperament.includes(action.payload) :
@@ -38,7 +38,7 @@ function rootReducer(state = initialState, action){
                     
             })
                 return {
-                    ...state, //me traiego todo lo de estado
+                    ...state,
                     dogs: temperamentFiltered
                     
         }
@@ -54,31 +54,31 @@ function rootReducer(state = initialState, action){
 
         }
 
-        case 'ORDER_BY_NAME': //'Asc. Desc'
-            let sortName = action.payload ==='Desc'?
-            state.allDogs.sort(
-                function(a, b) {
-                if (a.name.toLowerCase() < b.name.toLowerCase()) {
-                    return 1;
-                }
-                if (b.name.toLowerCase() < a.name.toLowerCase()) {
-                    return -1;
-                }
-                return 0; 
-            }) 
-            : state.allDogs.sort(function(a, b) { 
-                if (a.name.toLowerCase() < b.name.toLowerCase()) {
-                    return -1;
-                }
-                if (b.name.toLowerCase() < a.name.toLowerCase()) {
-                    return 1;
-                }
-                return 0;
-            })
-            return {
-                ...state,
-                dogs: sortName,
-            };
+        // case 'ORDER_BY_NAME': //'Asc. Desc'
+        //     let sortName = action.payload ==='Desc'?
+        //     state.allDogs.sort(
+        //         function(a, b) {
+        //         if (a.name.toLowerCase() < b.name.toLowerCase()) {
+        //             return 1;
+        //         }
+        //         if (b.name.toLowerCase() < a.name.toLowerCase()) {
+        //             return -1;
+        //         }
+        //         return 0; 
+        //     }) 
+        //     : state.allDogs.sort(function(a, b) { 
+        //         if (a.name.toLowerCase() < b.name.toLowerCase()) {
+        //             return -1;
+        //         }
+        //         if (b.name.toLowerCase() < a.name.toLowerCase()) {
+        //             return 1;
+        //         }
+        //         return 0;
+        //     })
+        //     return {
+        //         ...state,
+        //         dogs: sortName,
+        //     };
 
 
         case 'ORDER_BY_WEIGHT':

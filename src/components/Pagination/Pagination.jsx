@@ -6,8 +6,8 @@ const Pagination = ({ elementsPerPage, totalElements, onPageChange }) => {
     const pages = [...Array(totalPages).keys()].map(page => page + 1)  
     return (
       <div className={Styles.PaginatinoDiv}>
-          {pages.map(page => (
-              <button  className={Styles.BtnPagination} onClick={() => onPageChange(page)}>{page}</button>
+          {pages.map((page, index )=> (
+              <button key={index} className={Styles.BtnPagination} onClick={() => onPageChange(page)}>{page}</button>
           ))}
       </div>
     );

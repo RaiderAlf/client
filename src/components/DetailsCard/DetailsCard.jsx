@@ -2,8 +2,9 @@
 import { Link } from 'react-router-dom';
 //HOOKS
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+//REDUX
+import { useDispatch, useSelector } from 'react-redux';
 import { getDetail } from '../../redux/actions';
 //COMPONENTS
 import Loader from '../Loader/Loader';
@@ -16,6 +17,7 @@ const DetailsCard = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
     const details = useSelector(state => state.detail);
+
 
     console.log(details)
 
@@ -39,14 +41,15 @@ const DetailsCard = () => {
                             </div>
                             <div className={Style.DetailsInfo}>
                                 <h1 className={Style.BreedName} >{details.name}</h1>
-                                <h4>Peso: </h4>
+                                <h4>Weight: </h4>
                                 <span>{details.height} kgs</span>
-                                <h4>Tamaño: </h4>
+                                <h4>Height: </h4>
                                 <span>{details.weight} cm</span>
-                                <h4>Esperanza de vida: </h4>
+                                <h4>Life Span: </h4>
                                 <span>{details.lifeSpan} </span>
-                                <h4>Temperamentos: </h4>
+                                <h4>Temperaments: </h4>
                                 <span> {details.temperament}</span>
+                                
                             </div>
                         </div>
                     </div>

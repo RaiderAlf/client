@@ -16,6 +16,21 @@
     height: calc(100vh - 20vh);
 }
 
+.DivDivFil {
+    display: flex;
+    gap: .2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.DivFilters {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    align-items: center;
+    justify-content: center;
+}
+
 .LogoImg {
     transform: rotateY(180deg);
     filter: drop-shadow( 15px -5px 8px #00000085);
@@ -27,8 +42,8 @@
 }
 
 .divSearch {
-    width: 30%;
     display: flex;
+    gap: 1rem;
     justify-content: space-around;
     align-items: center;
 }
@@ -77,7 +92,7 @@
 }
 
 .NavBar {
-    padding: .1rem;
+    padding: .5rem 0 0 0;
     background: linear-gradient(to bottom, #ffffffd8 60%, #ffffff00 );
     width: 100%;
     display: flex;
