@@ -77,40 +77,38 @@ const Home = () => {
         dispatch(filterDogsByTemperament(e.target.value));
     };
 
-    //SORT BY WEIGHT
-    const handleWeight = (e) => {
-        e.preventDefault();
-        dispatch(orderByWeight(e.target.value))
+    //UPDATE DOGS
+    const renderUpdate = () => {
         setCurrentPage(2);
         setTimeout(function() {
             setCurrentPage(1)
           }, 1);
+    }
+
+    //SORT BY WEIGHT
+    const handleWeight = (e) => {
+        e.preventDefault();
+        dispatch(orderByWeight(e.target.value))
+        renderUpdate()
     }
 
     //SORT BY DB OR API
     const handleOrigin = (e) => {
         e.preventDefault();
         dispatch(filterCreated(e.target.value))
-        setCurrentPage(2);
-        setTimeout(function() {
-            setCurrentPage(1)
-          }, 1);
+        renderUpdate()
     }
 
     //SORT BY NAME
     const handleSort = (e) => {
         e.preventDefault();
         allDogs.reverse();
-        setCurrentPage(2);
-        setTimeout(function() {
-            setCurrentPage(1)
-          }, 1);
+        renderUpdate()
     };
 
 
     //INPUT HANDLER
     const handlerOnSearch = (e) => {
-        console.log(allTemperament)
         setInput({
             value : e.target.value
         });
@@ -151,7 +149,7 @@ const Home = () => {
 
                     <div className={Styles.DivDivFil}>
                         <select className={Styles.BtnHome} onChange={(e) => handleFilterTemperament(e)}>
-                            <option>Filter by temperaments</option>
+
                             
                             <option className={Styles.BtnHome} value='All'>All</option>
 

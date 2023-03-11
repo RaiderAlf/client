@@ -101,7 +101,7 @@ const CreateDogs = () => {
                             <input type="text" name="image" value={inputForm.image} onChange={e => handlerForm(e)} />
                         </label>
 
-                        <select className={Styles.BtnHome} >
+                        <select className={Styles.BtnHome} name='temperament' onClick={e => handlerForm(e)} >
                             <option className={Styles.BtnHome} >Temperaments</option>
                             {allTemperament.map((temperament) => (
                                 <option className={Styles.BtnHome} name='temperament' onClick={e => handlerForm(e)} key={temperament.name} value={temperament.name}>
