@@ -73,7 +73,7 @@
 .BtnHome {
     padding: .5rem;
     background-color: #f8e5e5;
-    box-shadow: 0 0 10px #000000,inset 0 0 5px #d938388d;
+    box-shadow: 0 0 10px #000000 ,inset 0 0 5px #d938388d;
     border: none;
     border-radius: 15px;
     transition: box-shadow .2s linear;
@@ -81,6 +81,12 @@
     font-family: 'Mynerve', cursive;
     font-weight: 600;
     color: #000000;
+}
+
+.BtnHome:disabled {
+    background-color: #9c9999;
+    box-shadow: 0 0 15px #000000;
+    color: #3f3f3f;
 }
 
 .BtnHome:hover {
@@ -108,4 +114,11 @@
     padding: 0 2rem;
     justify-content: space-around;
     align-items: center;
+}
+
+.Pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
