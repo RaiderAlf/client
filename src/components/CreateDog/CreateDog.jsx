@@ -118,8 +118,8 @@ const CreateDogs = () => {
 
                         <select className={Styles.BtnHome} name='temperament' onClick={e => handlerForm(e)} >
                             <option className={Styles.BtnHome} >Temperament</option>
-                            {allTemperament.map((temperament) => (
-                                <option className={Styles.BtnHome} name='temperament' onClick={e => handlerForm(e)} key={temperament.name} value={temperament.name}>
+                            {allTemperament.map((temperament, index) => (
+                                <option className={Styles.BtnHome} name='temperament' onClick={e => handlerForm(e)} key={index} value={temperament.name}>
                                     {temperament.name}
                                 </option>
                             ))}

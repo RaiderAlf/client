@@ -23,12 +23,12 @@ const Home = () => {
     //ALL DOGS
      useEffect(() => {
             dispatch(getDogs());
+            dispatch(getTemperament())
         },[dispatch])
 
-    //DOGS Temperament
-    useEffect(() => {
-        dispatch(getTemperament())
-    },[dispatch])
+    // //DOGS Temperament
+    // useEffect(() => {
+    // },[dispatch])
 
     //STATES
     const allDogs = useSelector(state => state.dogs);
@@ -211,18 +211,18 @@ const Home = () => {
                 <div className={Styles.HomeDiv} >
                         {
 
-                            allDogs?.length ? (
-                                currentElements?.length >= 1 ? (
-                                        currentElements?.map(dog => ( <Card 
-                                            key={dog.id} 
+                            currentElements?.length ? (
+                                allDogs[0] === false ? (
+                                        <NotFoundDogs />
+                                    ) : (
+                                       currentElements?.map((dog, index )=> ( <Card 
+                                            key={index} 
                                             name={dog.name}
                                             weight={dog.weight} 
                                             image={dog.image} 
                                             id={dog.id} 
                                             temperament={dog.temperament}
-                                            />))
-                                    ) : (
-                                        <NotFoundDogs />
+                                            />)) 
                                     ) 
                             ) : ( <Loader /> )
 

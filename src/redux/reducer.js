@@ -1,4 +1,3 @@
-
 const initialState = { 
     dogs : [],
     allDogs: [],
@@ -14,7 +13,7 @@ function rootReducer(state = initialState, action){
                 ...state,
                 dogs: action.payload,
                 allDogs: action.payload 
-            }
+            };
 
         case 'GET_DOG_NAME':
             return {
@@ -26,7 +25,7 @@ function rootReducer(state = initialState, action){
             return {
                 ...state,
                 temperament : action.payload
-            }
+            };
 
 
         case 'FILTER_BY_TEMPERAMENT':
@@ -36,12 +35,11 @@ function rootReducer(state = initialState, action){
                return el.temperament? el.temperament.includes(action.payload) :
                     el.temperaments?.map(ele => ele.name).includes(action.payload) 
                     
-            })
-                return {
-                    ...state,
-                    dogs: temperamentFiltered
-                    
-        }
+            });
+            return {
+                ...state,
+                dogs: temperamentFiltered        
+            };
 
         case 'FILTER_CREATED':
             const filterCreated = action.payload === 'Created' ? 
@@ -51,35 +49,7 @@ function rootReducer(state = initialState, action){
                 ...state, //me devuelve el estado anterior
                 dogs: action.payload === 'All'? state.allDogs 
                 : filterCreated  
-
-        }
-
-        // case 'ORDER_BY_NAME': //'Asc. Desc'
-        //     let sortName = action.payload ==='Desc'?
-        //     state.allDogs.sort(
-        //         function(a, b) {
-        //         if (a.name.toLowerCase() < b.name.toLowerCase()) {
-        //             return 1;
-        //         }
-        //         if (b.name.toLowerCase() < a.name.toLowerCase()) {
-        //             return -1;
-        //         }
-        //         return 0; 
-        //     }) 
-        //     : state.allDogs.sort(function(a, b) { 
-        //         if (a.name.toLowerCase() < b.name.toLowerCase()) {
-        //             return -1;
-        //         }
-        //         if (b.name.toLowerCase() < a.name.toLowerCase()) {
-        //             return 1;
-        //         }
-        //         return 0;
-        //     })
-        //     return {
-        //         ...state,
-        //         dogs: sortName,
-        //     };
-
+            };
 
         case 'ORDER_BY_WEIGHT':
             let sortWeight = action.payload === 'Light' ?
@@ -104,20 +74,18 @@ function rootReducer(state = initialState, action){
             return  {
                 ...state,
                 dogs: sortWeight,
-            
 
-        };
+            };
+
         case 'GET_DETAIL':
-             return {
+            return {
                  ...state,
                  detail: action.payload
-             }
-
-        
+            };
         
         default:
             return state;
-    }
+    };
     
 
 };
