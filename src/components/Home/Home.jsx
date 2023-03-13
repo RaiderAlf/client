@@ -150,44 +150,48 @@ const Home = () => {
                     <input autoComplete='off' className={Styles.InputSearch} type="text" name='search' value={input.value} onChange={(e) => switchOnSearch(e)} placeholder='Search by name . . .' />
                     {
                         input.value.length < 1 ? (
-                            <button disabled className={Styles.BtnHome} onClick={(e) => handlesBtnSearch(e)} >Search</button>
+                            <button disabled className={Styles.BtnSearch} onClick={(e) => handlesBtnSearch(e)} >Search</button>
                         ) : (
-                            <button className={Styles.BtnHome} onClick={(e) => handlesBtnSearch(e)} >Search</button>
+                            <button className={Styles.BtnSearch} onClick={(e) => handlesBtnSearch(e)} >Search</button>
                         )
                     }
                 </div>
                 {/* -----------FILTERS AND ORDERS DIV-------------- */}
                 <div className={Styles.DivFilters}>
 
-                    <span><strong>Filters and Orders</strong></span>
+                    <span className={Styles.FiltersBtn} ><strong>Filters and Orders</strong></span>
                     {/*FILTER BY TEMPERAMENT */}
-                    <div className={Styles.DivDivFil}>
-                        <select className={Styles.BtnHome} onChange={(e) => handleFilterTemperament(e)}>
-                            <option className={Styles.BtnHome} value='All'>All</option>
+                    <div className={Styles.DivFiltersHover} >
 
-                            {allTemperament?.map((temperament) => (
-                                <option className={Styles.BtnHome} key={temperament.name} value={temperament.name}>
-                                {temperament.name}
-                            </option>
-                            ))}
-                        </select>
-                        {/* ----------------ORDERS---------------- */}
-                        {
-                            sort === true ? (<button className={Styles.BtnHome} onClick={ e => {handleOrigin(e); HandleBtnSort(e)  }} value='Created' >Origin</button>)
-                            : ( <button className={Styles.BtnHome} onClick={ e => {handleOrigin(e); HandleBtnSort(e) }} value='API' >Origin</button> )
-                        }
+                        <div className={Styles.DivDivFil}>
+                            <select className={Styles.BtnHome} onChange={(e) => handleFilterTemperament(e)}>
+                                <option className={Styles.BtnHome} value='All'>All</option>
 
-                        {
-                            sort === true ? (<button className={Styles.BtnHome} onClick={ e => { handleWeight(e); HandleBtnSort(e) }} value='Light' >Weight</button>)
-                            : ( <button className={Styles.BtnHome} onClick={ e => { handleWeight(e); HandleBtnSort(e) }} value='Heavy' >Weight</button> )
-                        }
+                                {allTemperament?.map((temperament) => (
+                                    <option className={Styles.BtnHome} key={temperament.name} value={temperament.name}>
+                                    {temperament.name}
+                                </option>
+                                ))}
+                            </select>
+                            {/* ----------------ORDERS---------------- */}
+                            {
+                                sort === true ? (<button className={Styles.BtnHome} onClick={ e => {handleOrigin(e); HandleBtnSort(e)  }} value='Created' >Origin</button>)
+                                : ( <button className={Styles.BtnHome} onClick={ e => {handleOrigin(e); HandleBtnSort(e) }} value='API' >Origin</button> )
+                            }
 
-                        {
-                            sort === true ? (<button className={Styles.BtnHome} onClick={ e => handleSort(e) } value='Asc'>A-Z</button>)
-                            : ( <button className={Styles.BtnHome} onClick={ e => handleSort(e) } value='Desc'>Z-A</button> )
-                        }
-                        {/* ----------------RESET DOGS---------------- */}
-                        <button className={Styles.BtnHome} onClick={(e) => handlerReset(e)} >All Dogs</button>
+                            {
+                                sort === true ? (<button className={Styles.BtnHome} onClick={ e => { handleWeight(e); HandleBtnSort(e) }} value='Light' >Weight</button>)
+                                : ( <button className={Styles.BtnHome} onClick={ e => { handleWeight(e); HandleBtnSort(e) }} value='Heavy' >Weight</button> )
+                            }
+
+                            {
+                                sort === true ? (<button className={Styles.BtnHome} onClick={ e => handleSort(e) } value='Asc'>A-Z</button>)
+                                : ( <button className={Styles.BtnHome} onClick={ e => handleSort(e) } value='Desc'>Z-A</button> )
+                            }
+                            {/* ----------------RESET DOGS---------------- */}
+                            <button className={Styles.BtnHome} onClick={(e) => handlerReset(e)} >All Dogs</button>
+                        </div>
+
                     </div>
 
                 </div>
@@ -202,14 +206,12 @@ const Home = () => {
 
             </div>
 
-            <hr/>
-
             <div className={Styles.contentDiv}>
                 {/* -----------------DIV ELEMENTS---------------- */}
                 <div className={Styles.HomeDiv} >
                         {
 
-                            currentElements?.length ? (
+                            allDogs?.length ? (
                                 currentElements?.length >= 1 ? (
                                         currentElements?.map(dog => ( <Card 
                                             key={dog.id} 
@@ -233,7 +235,7 @@ const Home = () => {
                         {
                             currentPage === 1 ? ( <span></span> ) : ( <button className={Styles.BtnHome} onClick={e => paginationBtnPrev(e)} >PREV</button> )
                         }
-                        <span className={Styles.BtnHome} >{currentPage}</span>
+                        <span className={Styles.spanPagination} >{currentPage}</span>
                         {
                             Math.ceil(allDogs.length /elementsPerPage) > currentPage ? ( <button className={Styles.BtnHome} onClick={e => paginationBtnNext(e)} >NEXT</button> ) : ( <span></span> )
                         }

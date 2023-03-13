@@ -29,6 +29,40 @@
     gap: .2rem;
     align-items: center;
     justify-content: center;
+    transition: all .3s linear;
+}
+
+.FiltersBtn {
+    background-color: #d938388d;
+    padding: .5rem;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #000000,inset 0 0 5px #d938388d;
+    cursor: pointer;
+    transform: translateY(20px);
+    transition: all .3s cubic-bezier(0.455, 0.03, 0.515, 0.955) linear;
+}
+
+.FiltersBtn:hover {
+    box-shadow: inset 0 0 10px #000000, 0 0 5px #d938388d;
+}
+
+.DivFiltersHover {
+    opacity: 0;
+    transition: all .3s linear;
+}
+
+.DivFilters:hover .FiltersBtn {
+    transform: translateY(-5px);
+    transition: all .3s linear;
+}
+
+.DivFilters:hover .DivFiltersHover {
+    opacity: 1;
+    transition: all .3s linear;
+}
+
+.DivFilters:hover .FiltersBtn {
+    box-shadow: inset 0 0 10px #000000, 0 0 5px #d938388d;
 }
 
 .LogoImg {
@@ -47,6 +81,36 @@
     justify-content: space-around;
     align-items: center;
 }
+
+.divSearch:hover button {
+    transition: all .3s linear;
+}
+
+.divSearch input {
+    opacity: 0;
+    transition: all .3s linear;
+}
+
+.divSearch:hover input {
+    opacity: 1;
+    transition: all .3s linear;
+}
+
+.BtnSearch {
+    padding: .5rem;
+    background-color: #f8e5e5;
+    box-shadow: 0 0 10px #000000 ,inset 0 0 5px #d938388d;
+    border: none;
+    border-radius: 15px;
+    transition: box-shadow .2s linear;
+    text-decoration: none;
+    font-family: 'Mynerve', cursive;
+    font-weight: 600;
+    color: #000000;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
 
 .InputSearch {
     padding: .5rem;
@@ -67,8 +131,10 @@
 .InputSearch:focus-visible {
     box-shadow: 0 0 20px #000000,inset 0 0 5px #d938388d;
     outline: none;
-    border: dotted 2px #d93838;;
+    border: dotted 2px #d93838;
+    opacity: 1;
 }
+
 
 .BtnHome {
     padding: .5rem;
@@ -81,6 +147,7 @@
     font-family: 'Mynerve', cursive;
     font-weight: 600;
     color: #000000;
+    cursor: pointer;
 }
 
 .BtnHome:disabled {
@@ -121,4 +188,15 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+}
+
+.spanPagination {
+    padding: .5rem 1rem;
+    background-color: #ffcccc;
+    box-shadow: 0 0 5px #000000;
+    border: none;
+    border-radius: 25px;
+    font-weight: 900;
+    color: #000000;
+    cursor: none;
 }

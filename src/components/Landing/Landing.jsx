@@ -7,9 +7,9 @@ import Styles from './Landing.module.css'
 const Landing = () => {
     return (
         <div className={Styles.LandingDiv}>
-            <h1>Hola Humano</h1>
-            <h5>Te queremos mostrar un poco sobre nosotros</h5>
-            <h6>Presiona las patitas para ingresar</h6>
+            <h1>Hi! human</h1>
+            <h5>We want to show you a little bit about ourselves</h5>
+            <h6>Press paws to enter</h6>
             <div>
                 <Link to={'/home'} className={Styles.btnLand} >
                     🐾

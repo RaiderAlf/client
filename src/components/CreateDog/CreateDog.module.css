@@ -1,3 +1,7 @@
+* {
+    font-family: 'Mynerve', cursive;
+}
+
 .Div {
     display: flex;
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPjUpb_8Gs1UEi6QyYgRFzFp3sWRmTazMR1g&usqp=CAU");
@@ -20,7 +24,6 @@
     border-radius: 15px;
     transition: box-shadow .2s linear;
     text-decoration: none;
-    font-family: 'Mynerve', cursive;
     font-weight: 600;
     color: #000000;
 }
@@ -34,34 +37,41 @@
 }
 
 .FormDiv {
-    background: #8d66667e;
+    background: #81818171;
+    backdrop-filter: blur(2px);
+    width: 40vw;
     padding: 2rem;
-    border-radius: 20px;
-    box-shadow:inset 0 0 20px #000000, 0 0 10px #d938388d;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    font-family: 'Mynerve', cursive;
+    border-radius: 25px;
+    box-shadow:inset 0 0 20px #000000;
+    display: grid;
+    place-content: center;
 }
 
 .FormDivDiv {
     background: #ffcecea9;
     padding: 2rem;
     border-radius: 20px;
+    width: 35vw;
     box-shadow: 0 0 20px #000000,inset 0 0 10px #d938388d;
     display: flex;
-    gap: .5rem;
+    gap: 1rem;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: normal;
     font-size: 24px;
-    font-family: 'Mynerve', cursive;
+    text-align: center;
+}
+
+.FormDivDiv label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.FormDivDiv select {
+    text-align: center;
 }
 
 .FormDivDiv button {
-    font-family: 'Mynerve', cursive;
     font-weight: 700;
     font-size: medium;
     margin-top: 1rem;
@@ -70,3 +80,35 @@
     border-radius: 15px;
     background-color: #6d5252b0;
 }
+
+.FormDivDiv button:disabled {
+    background-color: #969696b0;
+}
+
+.FormDivDiv h1 {
+    text-shadow: 0 0 15px #ff4040;
+}
+
+.FormDivDiv input {
+    padding: .5rem;
+    background-color: #ffdcdc;
+    border: none;
+    border-radius: 20px;
+}
+
+.imgLook {
+    position: absolute;
+    transform: rotate(-90deg);
+    transition: all 2s linear;
+    left: -4.5vw;
+    z-index: 1000;
+    top: 40vh;
+    filter: drop-shadow(0 -15px 5px #00000083);
+    animation: shake .2s infinite alternate-reverse;
+}
+
+@keyframes shake {
+    0% { top : 39.9vh }
+    20% { top : 40vh }
+    100% { top : 40.1vh }
+  }

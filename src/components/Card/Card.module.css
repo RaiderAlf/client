@@ -25,7 +25,7 @@
 .CardDiv:hover {
     box-shadow: 0 0 20px #000000, inset 0 0 30px #d938388d;
     backdrop-filter: blur(5px);
-    animation: shake 1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    animation: shake 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite;
 }
 
 .CardDiv:hover img {
@@ -50,7 +50,7 @@
 }
 
 @keyframes shake {
-    0% { transform: translate(2px, 0); }
-    20% { transform: translate(-2px, 0); }
-    100% { transform: translate(2px, 0); }
+    0% { transform: translate(0, 2px); }
+    20% { transform: translate(0, -2px); }
+    100% { transform: translate(0, 2px); }
   }
