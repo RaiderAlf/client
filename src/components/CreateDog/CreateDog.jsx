@@ -35,15 +35,6 @@ const CreateDogs = () => {
         temperament : ''
     });
 
-    // const Create = {
-    //     name : inputForm.name,
-    //     weight : inputForm.weightMin + ' - ' + inputForm.weightMax,
-    //     height : inputForm.heightMin + ' - ' + inputForm.heightMax,
-    //     lifeSpan : inputForm.lifeSpanMin + ' - ' + inputForm.lifeSpanMax,
-    //     image : inputForm.image,
-    //     temperament : inputForm.temperament
-    // }
-
     const handlerForm = (e) => {
         console.log(allTemperament)
         setInputForm({
@@ -77,42 +68,69 @@ const CreateDogs = () => {
                     <div className={Styles.FormDivDiv}>
                         <h1>Make your dog</h1>
                         <label htmlFor="name">
-                            <span>Name: </span>
+                            {
+                                inputForm.name.match(/[0-9]+/) ? <span className={Styles.ErrorMsg} >Name Invalid</span> : <span className={Styles.PropertyName} >Name</span>
+                            }
                             <input type="text" name="name" value={inputForm.name} onChange={e => handlerForm(e)} />
+                            {
+                                inputForm.name.match(/[0-9]+/) && <span className={Styles.ErrorMsg1}>The name cannot contain numbers</span>
+                            }
                         </label>
 
                         <label htmlFor="weightMin">
-                            <span>Weight min: </span>
+                            {
+                                !inputForm.weightMin.match(/^[0-9]{3}$/) ? inputForm.weightMax !== '' && inputForm.weightMin > inputForm.weightMax ? <span className={Styles.ErrorMsg} >Weight Min not allowed</span> : <span className={Styles.PropertyName}>Weight min: </span> : <span className={Styles.ErrorMsg}>Only 2 digits are allowed</span>
+                            }
                             <input type="number" name="weightMin" value={inputForm.weigthMin} onChange={e => handlerForm(e)}/>
                             <span> Kgs </span>
+                            {
+                               inputForm.weightMax !== '' && inputForm.weightMin > inputForm.weightMax && <span className={Styles.ErrorMsg1}>The minimum weight cannot be more than the maximum</span>
+                            }
                         </label>
 
                         <label htmlFor="weightMax">
-                            <span>Weight max: </span>
+                            {
+                                !inputForm.weightMax.match(/^[0-9]{3}$/) ? inputForm.weightMax !== '' && inputForm.weightMin > inputForm.weightMax ? <span className={Styles.ErrorMsg} >Weight Max not allowed</span> : <span className={Styles.PropertyName}>Weight min: </span> : <span className={Styles.ErrorMsg}>Only 2 digits are allowed</span>
+                            }
                             <input type="number" name="weightMax" value={inputForm.weigthMax} onChange={e => handlerForm(e)} />
                             <span> Kgs </span>
+                            {
+                               inputForm.weightMax !== '' && inputForm.weightMin > inputForm.weightMax && <span className={Styles.ErrorMsg1}>The minimum weight cannot be more than the maximum</span>
+                            }
                         </label>
 
                         <label htmlFor="heightMin">
-                            <span>height min: </span>
+                            {
+                                !inputForm.heightMin.match(/^[0-9]{3}$/) ? inputForm.heightMax !== '' && inputForm.heightMin > inputForm.heightMax ? <span className={Styles.ErrorMsg}> Height Min not allowed </span> : <span className={Styles.PropertyName}>Height min: </span> : <span className={Styles.ErrorMsg}>Only 2 digits are allowed</span>
+                            }
                             <input type="number" name="heightMin" value={inputForm.heightMin} onChange={e => handlerForm(e)} />
                             <span> Cm </span>
+                            {
+                               inputForm.heightMax !== '' && inputForm.heightMin > inputForm.heightMax && <span className={Styles.ErrorMsg1}>The minimum height cannot be more than the maximum</span>
+                            }
                         </label>
 
                         <label htmlFor="heightMax">
-                            <span>Height max: </span>
+                            {
+                                !inputForm.heightMax.match(/^[0-9]{3}$/) ? inputForm.heightMax !== '' && inputForm.heightMin > inputForm.heightMax ? <span className={Styles.ErrorMsg}> Height Max not allowed </span> : <span className={Styles.PropertyName}>Height Max: </span> : <span className={Styles.ErrorMsg}>Only 2 digits are allowed</span>
+                            }
                             <input type="number" name="heightMax"  value={inputForm.heightMax} onChange={e => handlerForm(e)}/>
                             <span> Cm </span>
+                            {
+                               inputForm.heightMax !== '' && inputForm.heightMin > inputForm.heightMax && <span className={Styles.ErrorMsg1}>The minimum height cannot be more than the maximum</span>
+                            }
                         </label>
 
                         <label htmlFor="lifeSpan">
-                            <span>Life Span: </span>
+                            {
+                                !inputForm.lifeSpan.match(/^[0-9]{3}$/) ? <span className={Styles.PropertyName}>Life Span: </span> : <span className={Styles.ErrorMsg}>Only 2 digits are allowed</span>
+                            }
                             <input type="number" name="lifeSpan" value={inputForm.lifeSpan} onChange={e => handlerForm(e)} />
                             <span> Years </span>
                         </label>
 
                         <label htmlFor="image">
-                            <span>URL image: </span>
+                            <span className={Styles.PropertyName}>URL image: </span>
                             <input type="text" name="image" value={inputForm.image} onChange={e => handlerForm(e)} />
                         </label>
 
@@ -126,10 +144,10 @@ const CreateDogs = () => {
                         </select>
 
                         {
-                            inputForm.temperament === '' || inputForm.image === '' || inputForm.lifeSpan === '' || inputForm.heightMax === '' || inputForm.heightMin === '' || inputForm.weightMax === '' || inputForm.weightMin === '' | inputForm.name === '' ? (
-                                <button disabled onClick={e => handlerSubmit(e)}>Crear Perro</button>
-                            ) : (
+                            inputForm.temperament !== '' && inputForm.image !== '' && inputForm.lifeSpan !== '' && inputForm.heightMax !== '' && inputForm.heightMin !== '' && inputForm.weightMax !== '' && inputForm.weightMin !== '' && inputForm.name !== '' && !inputForm.name.match(/[0-9]+/) && !inputForm.heightMin.match(/^[0-9]{3}$/) && !inputForm.heightMax.match(/^[0-9]{3}$/) && !inputForm.lifeSpan.match(/^[0-9]{3}$/) && !inputForm.weightMin.match(/^[0-9]{3}$/) && !inputForm.weightMax.match(/^[0-9]{3}$/) && !inputForm.name.match(/[0-9]+/) && inputForm.heightMin < inputForm.heightMax && inputForm.heightMin < inputForm.heightMax ? (
                                 <button onClick={e => handlerSubmit(e)}>Crear Perro</button>
+                            ) : (
+                                <button disabled onClick={e => handlerSubmit(e)}>Crear Perro</button>
                             )
                         }
                         

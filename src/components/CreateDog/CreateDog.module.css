@@ -39,7 +39,7 @@
 .FormDiv {
     background: #81818171;
     backdrop-filter: blur(2px);
-    width: 40vw;
+    width: 50vw;
     padding: 2rem;
     border-radius: 25px;
     box-shadow:inset 0 0 20px #000000;
@@ -51,20 +51,21 @@
     background: #ffcecea9;
     padding: 2rem;
     border-radius: 20px;
-    width: 35vw;
+    width: 45vw;
     box-shadow: 0 0 20px #000000,inset 0 0 10px #d938388d;
     display: flex;
     gap: 1rem;
     flex-direction: column;
     justify-content: center;
     align-items: normal;
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
 }
 
 .FormDivDiv label {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .FormDivDiv select {
@@ -94,17 +95,44 @@
     background-color: #ffdcdc;
     border: none;
     border-radius: 20px;
+    font-size: 18px;
 }
 
 .imgLook {
     position: absolute;
     transform: rotate(-90deg);
     transition: all 2s linear;
-    left: -4.5vw;
+    left: -9.5vw;
     z-index: 1000;
     top: 40vh;
     filter: drop-shadow(0 -15px 5px #00000083);
     animation: shake .2s infinite alternate-reverse;
+}
+
+.ErrorMsg {
+    text-shadow: 0 0 5px red;
+    background-color: #ff0000;
+    color: #f8e5e5;
+    width: 50%;
+    border-radius: 10px  75% 75% 10px;
+}
+
+.ErrorMsg1 {
+    position: fixed;
+    padding: .5rem;
+    width: 40vw;
+    z-index: 1000;
+    right: -21vw;
+    border-radius: 50% 10px 10px 50%;
+    text-shadow: 0 0 5px rgb(0, 0, 0);
+    background-color: #ff0000;
+    color: #f8e5e5;
+    width: 50%;
+}
+
+.PropertyName {
+    font-weight: 600;
+    text-shadow: 0 0 5px #d93838d4;
 }
 
 @keyframes shake {

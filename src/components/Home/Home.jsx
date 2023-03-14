@@ -217,7 +217,7 @@ const Home = () => {
                                     ) : (
                                        currentElements?.map((dog, index )=> ( <Card 
                                             key={index} 
-                                            name={dog.name}
+                                            name={dog.name.toUpperCase()}
                                             weight={dog.weight} 
                                             image={dog.image} 
                                             id={dog.id} 
