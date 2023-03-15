@@ -20,10 +20,12 @@ const CreateDogs = () => {
 
     const allTemperament = useSelector(state => state.temperament);
 
+    //GET TEMPERAMENT
     useEffect(() => {
         dispatch(getTemperament)
     },[dispatch])
 
+    //INPUT STATE
     const [ inputForm, setInputForm ] = useState({
         name : '',
         weightMin : '',
@@ -35,6 +37,7 @@ const CreateDogs = () => {
         temperament : ''
     });
 
+    //ON CHANGE FN
     const handlerForm = (e) => {
         console.log(allTemperament)
         setInputForm({
@@ -43,6 +46,7 @@ const CreateDogs = () => {
         });
     };
 
+    //SUBMIT FN
     const handlerSubmit = (e) => {
         axios.post('http://localhost:3001/dogs', inputForm)
         alert('Perro Creado')

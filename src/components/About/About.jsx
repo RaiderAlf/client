@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 //STYLES
 import Styles from './About.module.css';
+//ASSETS
 import icon from '../../assets/icon1.png';
 import linkedIn from '../../assets/linkedIn.png';
 import GitHub from '../../assets/github.png';

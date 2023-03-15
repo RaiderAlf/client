@@ -1,4 +1,6 @@
+//IMPORTS
 import { Link } from 'react-router-dom';
+//STYLES
 import Styles from './Card.module.css';
 
 const Card = (props) => {

@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 //HOOKS
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-//REDUX
 import { useDispatch, useSelector } from 'react-redux';
+//ACTIONS
 import { getDetail } from '../../redux/actions';
 //COMPONENTS
 import Loader from '../Loader/Loader';
