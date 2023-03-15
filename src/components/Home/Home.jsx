@@ -144,6 +144,7 @@ const Home = () => {
                 <Link to='/home'>
                     <img className={Styles.LogoImg} onClick={e => handlerReset(e)} src={icon} alt="Logo" height='80px' />
                 </Link>
+
                 {/* ----------- SEARCH BY NAME----------- */}
                 <div className={Styles.divSearch} >
 
@@ -156,6 +157,7 @@ const Home = () => {
                         )
                     }
                 </div>
+
                 {/* -----------FILTERS AND ORDERS DIV-------------- */}
                 <div className={Styles.DivFilters}>
 
@@ -173,6 +175,7 @@ const Home = () => {
                                 </option>
                                 ))}
                             </select>
+
                             {/* ----------------ORDERS---------------- */}
                             {
                                 sort === true ? (<button className={Styles.BtnHome} onClick={ e => {handleOrigin(e); HandleBtnSort(e)  }} value='Created' >Origin</button>)
@@ -189,12 +192,12 @@ const Home = () => {
                                 : ( <button className={Styles.BtnHome} onClick={ e => handleSort(e) } value='Desc'>Z-A</button> )
                             }
                             {/* ----------------RESET DOGS---------------- */}
+
                             <button className={Styles.BtnHome} onClick={(e) => handlerReset(e)} >All Dogs</button>
                         </div>
-
                     </div>
-
                 </div>
+
                 {/* --------------------INTERNAL LINKS---------------------- */}
                 <Link className={Styles.BtnHome} to={'/create'}>
                     Create a Dog
@@ -209,39 +212,37 @@ const Home = () => {
             <div className={Styles.contentDiv}>
                 {/* -----------------DIV ELEMENTS---------------- */}
                 <div className={Styles.HomeDiv} >
-                        {
+                    {
 
-                            currentElements?.length ? (
-                                allDogs[0] === false ? (
-                                        <NotFoundDogs />
-                                    ) : (
-                                       currentElements?.map((dog, index )=> ( <Card 
-                                            key={index} 
-                                            name={dog.name.toUpperCase()}
-                                            weight={dog.weight} 
-                                            image={dog.image} 
-                                            id={dog.id} 
-                                            temperament={dog.temperament}
-                                            />)) 
-                                    ) 
-                            ) : ( <Loader /> )
+                        currentElements?.length ? (
+                            allDogs[0] === false ? (
+                                    <NotFoundDogs />
+                                ) : (
+                                    currentElements?.map((dog, index )=> ( <Card 
+                                        key={index} 
+                                        name={dog.name.toUpperCase()}
+                                        weight={dog.weight} 
+                                        image={dog.image} 
+                                        id={dog.id} 
+                                        temperament={dog.temperament}
+                                        />)) 
+                                ) 
+                        ) : ( <Loader /> )
 
-                        }    
+                    }    
+                </div>
 
-
-                    </div>
-                    {/* -------------PAGINATION---------------- */}
-                    <div className={Styles.Pagination} >
-                        {
-                            currentPage === 1 ? ( <span></span> ) : ( <button className={Styles.BtnHome} onClick={e => paginationBtnPrev(e)} >PREV</button> )
-                        }
-                        <span className={Styles.spanPagination} >{currentPage}</span>
-                        {
-                            Math.ceil(allDogs.length /elementsPerPage) > currentPage ? ( <button className={Styles.BtnHome} onClick={e => paginationBtnNext(e)} >NEXT</button> ) : ( <span></span> )
-                        }
-                    </div>
+                {/* -------------PAGINATION---------------- */}
+                <div className={Styles.Pagination} >
+                    {
+                        currentPage === 1 ? ( <span></span> ) : ( <button className={Styles.BtnHome} onClick={e => paginationBtnPrev(e)} >PREV</button> )
+                    }
+                    <span className={Styles.spanPagination} >{currentPage}</span>
+                    {
+                        Math.ceil(allDogs.length /elementsPerPage) > currentPage ? ( <button className={Styles.BtnHome} onClick={e => paginationBtnNext(e)} >NEXT</button> ) : ( <span></span> )
+                    }
+                </div>
             </div>
-            
         </div>
     );
 };

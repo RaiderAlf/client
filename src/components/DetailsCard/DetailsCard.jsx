@@ -18,9 +18,6 @@ const DetailsCard = () => {
     const { id } = useParams();
     const details = useSelector(state => state.detail);
 
-
-    console.log(details)
-
     useEffect(() => {
         dispatch(getDetail(id));
     }, [dispatch, id]);
