@@ -149,5 +149,7 @@
     }
     .FormDivDiv{
         width: 75%;
+        position: relative;
+        right: 40vw;
     }
   }
