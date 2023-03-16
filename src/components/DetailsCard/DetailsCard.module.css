@@ -80,7 +80,7 @@
         flex-wrap: wrap;
         height: auto;
         background-attachment: fixed;
-        background-repeat: repeat-y;
+        background-repeat: repeat;
         width: auto;
     }
 
