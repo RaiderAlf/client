@@ -86,7 +86,7 @@
     }
 
     .Image {
-        width: min-content;
-        max-height: min-content;
+        width: 200px;
+        max-height: 300px;
     }
 }
