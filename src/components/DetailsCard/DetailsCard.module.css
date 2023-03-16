@@ -75,6 +75,7 @@
     .DetailDiv{
         display: flex;
         justify-content: center;
+        padding: 1rem;
         align-items: center;
         flex-wrap: wrap;
         height: auto;
@@ -87,7 +88,11 @@
     }
 
     .Image {
-        max-width: 500px;
-        max-height: 300px;
+        object-fit: contain;
+    }
+    
+    .DetailsInfo{
+        width: auto;
+        font-size: medium;
     }
 }
