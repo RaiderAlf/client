@@ -21,7 +21,7 @@
         flex-direction: column;
         flex-wrap: wrap;
         object-fit: contain;
-        height: auto;
+        height: 100vh;
     }
 
     .loaderDiv img {
