@@ -17,11 +17,12 @@
         padding: 1rem;
         flex-direction: column;
         flex-wrap: wrap;
-        height: auto;
-        width: auto;
+        height: 100vh;
+        width: 100vw;
     }
 
     .loaderDiv img {
-        max-width: 500px;
+        object-fit: contain;
+        padding: 2rem;
     }
 }
