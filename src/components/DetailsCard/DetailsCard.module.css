@@ -83,6 +83,15 @@
         width: auto;
     }
 
+    .Div {
+        box-shadow: none;
+    }
+
+    .DivImg{
+        padding: 1rem;
+        width: 90%;
+    }
+
     .CardDiv{
         width: auto;
     }
@@ -90,7 +99,7 @@
     .Image {
         object-fit: contain;
     }
-    
+
     .DetailsInfo{
         width: auto;
         font-size: medium;
