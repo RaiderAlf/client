@@ -203,7 +203,7 @@
     cursor: none;
 }
 
-@media only screen and (max-width : 600px) {
+@media only screen and (max-width : 1000px) {
     .Home {
         width: auto;
         overflow: auto;

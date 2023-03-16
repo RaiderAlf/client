@@ -140,3 +140,11 @@
     20% { top : 40vh }
     100% { top : 40.1vh }
   }
+
+  @media only screen and (max-width : 1000px) {
+    .imgLook{
+        object-fit: contain;
+        height: 50%;
+        width: 50%;
+    }
+  }
