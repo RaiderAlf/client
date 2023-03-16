@@ -146,10 +146,9 @@
         object-fit: contain;
         height: 50%;
         width: 50%;
+        display: none;
     }
-    .FormDivDiv{
+    .FormDiv{
         width: 75%;
-        position: relative;
-        right: -40vw;
     }
   }
