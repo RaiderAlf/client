@@ -12,6 +12,7 @@
     gap: 1rem 0;
     flex-direction: column;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     height: calc(100vh - 20vh);
 }
@@ -20,12 +21,14 @@
     display: flex;
     gap: .2rem;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
 }
 
 .DivFilters {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     gap: .2rem;
     align-items: center;
     justify-content: center;
@@ -199,4 +202,12 @@
     font-weight: 900;
     color: #000000;
     cursor: none;
+}
+
+@media only screen and (max-width : 480px) {
+    .Home {
+        width: auto;
+        overflow: auto;
+        height: auto;
+    }
 }
