@@ -150,6 +150,6 @@
     .FormDivDiv{
         width: 75%;
         position: relative;
-        right: 40vw;
+        right: -40vw;
     }
   }
