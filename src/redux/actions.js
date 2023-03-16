@@ -5,7 +5,7 @@ export const getDogs = () => async (dispatch) => {
         type: 'GET_DETAIL', 
         payload : []
     });
-    await axios.get("http://localhost:3001/dogs/")
+    await axios.get("https://dogsapi-nhcb.onrender.com/dogs/")
     .then(response => {
         dispatch({
             type: 'GET_DOGS', 
@@ -16,7 +16,7 @@ export const getDogs = () => async (dispatch) => {
 
 export const getTemperament = () => async (dispatch) => {
     try {
-      const response = await axios.get('http://localhost:3001/temperament/');
+      const response = await axios.get('https://dogsapi-nhcb.onrender.com/temperament/');
       dispatch({ 
         type: 'GET_TEMPERAMENT', 
         payload: response.data.results
@@ -33,7 +33,7 @@ export const getDetail = (id) => async (dispatch) => {
         payload : []
     });
 
-    await axios.get(`http://localhost:3001/dogs/${id}`)
+    await axios.get(`https://dogsapi-nhcb.onrender.com/dogs/${id}`)
         .then(response => {
             dispatch({
                 type: 'GET_DETAIL', 
@@ -49,7 +49,7 @@ export const getDogName = (name) => async (dispatch) => {
             payload: []
         });
 
-        await axios.get('http://localhost:3001/dogs?name=' + name)
+        await axios.get('https://dogsapi-nhcb.onrender.com/dogs?name=' + name)
         .then(response => 
             dispatch({
                 type: 'GET_DOG_NAME',
