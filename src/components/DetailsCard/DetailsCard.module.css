@@ -90,6 +90,8 @@
     .DivImg{
         padding: 1rem;
         width: 90%;
+        object-fit: contain;
+        box-shadow: none;
     }
 
     .CardDiv{
