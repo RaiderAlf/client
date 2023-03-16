@@ -80,4 +80,13 @@
         background-attachment: fixed;
         width: auto;
     }
+
+    .CardDiv{
+        width: auto;
+    }
+
+    .Image {
+        width: min-content;
+        max-height: min-content;
+    }
 }
