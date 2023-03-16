@@ -114,7 +114,6 @@
     transition: all .3s linear;
 }
 
-
 .InputSearch {
     padding: .5rem;
     border: none;
@@ -204,7 +203,7 @@
     cursor: none;
 }
 
-@media only screen and (max-width : 480px) {
+@media only screen and (max-width : 600px) {
     .Home {
         width: auto;
         overflow: auto;
@@ -223,6 +222,14 @@
         flex-wrap: wrap;
         flex-direction: column;
         justify-content: space-around;
+        height: auto;
+    }
+
+    .NavBar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
         height: auto;
     }
 }
