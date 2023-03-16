@@ -232,4 +232,8 @@
         align-items: center;
         height: auto;
     }
+
+    .NavBar input {
+        opacity: 1;
+    }
 }
