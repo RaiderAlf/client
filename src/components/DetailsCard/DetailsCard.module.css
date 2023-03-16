@@ -38,6 +38,7 @@
 .CardDiv {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     align-items: center;
     gap: 1rem;
 }
@@ -66,4 +67,17 @@
     margin-bottom: 1rem;
     width: 400px;
     max-height: 500px;
+}
+
+
+@media only screen and (max-width : 600px) {
+    .DetailDiv{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        height: auto;
+        background-attachment: fixed;
+        width: auto;
+    }
 }
